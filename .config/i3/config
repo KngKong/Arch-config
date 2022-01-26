@@ -165,10 +165,14 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
+# Startup applications
 exec_always --no-startup-id ~/.fehbg&
-exec_always --no-startup-id pulseaudio --start
+#exec_always --no-startup-id nitrogen --restore 
+#exec_always --no-startup-id pulseaudio --start
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id picom --config ~/.config/picom.conf -b
+
+# i3-gaps configuration
 gaps inner 25
 gaps top 23
 
@@ -177,7 +181,7 @@ gaps top 23
   client.focused          #2F3D44 #2A3238 #768384 $term_color1 
 #  client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
   client.unfocused        #2F3D44 #0C161C #768384 #454948
-  client.urgent           #CB4B16 #f700ff #1ABC9C #268BD2
+  client.urgent           #CB4B16 #7e807e #d8d8d8 #268BD2
   client.placeholder      #000000 #0c0c0c #ffffff #000000 
 
   client.background       #000000
@@ -189,7 +193,9 @@ bindsym $mod+r mode "resize"
 #bar {
 #        status_command i3status
 #}
+
 # Hide title
+
 for_window [class="^.*"] border pixel 0
 new_window 1pixel
 

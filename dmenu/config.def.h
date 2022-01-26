@@ -10,10 +10,10 @@ static const char *fonts[] = {
 static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
 static const char *colors[SchemeLast][2] = {
 	/*     fg         bg       */
-        [SchemeNorm] = { "#abb2bf", "#282c34" },
-        [SchemeSel] = { "#f6f1f4", "#ff9191" },
-	[SchemeSelHighlight] = { "#3890e9", "#ff9191" },
-	[SchemeNormHighlight] = { "#a359ed", "#282c34" },
+        [SchemeNorm] = { "#d8d8d8", "#171717" },
+        [SchemeSel] = { "#f6f1f4", "#444" },
+	[SchemeSelHighlight] = { "#a359ed", "#444" },
+	[SchemeNormHighlight] = { "#a359ed", "#171717" },
 	[SchemeOut] = { "#000000", "#00ffff" },
 	[SchemeHp] = { "#bbbbbb", "#333333" }
 };
@@ -28,4 +28,4 @@ static unsigned int lineheight = 0;         /* -h option; minimum height of a me
 static const char worddelimiters[] = " ";
 
 /* Size of the window border */
-static const unsigned int border_width = 3;
+static const unsigned int border_width = 2;
