@@ -4,11 +4,11 @@ Config files of my arch rice.
 
 ## Make Dmenu
 
-Pathces Included :: Case insensitive__
-                    Fuzzy match__
-                    Fuzzy highlight__
-                    Mouse support__
-                    Border__
-                    Line height__
-                    High priority__
-                    Numbers__
+Pathces Included :: Case insensitive\n
+                    Fuzzy match\n
+                    Fuzzy highlight\n
+                    Mouse support\n
+                    Border\n
+                    Line height\n
+                    High priority\n
+                    Numbers\n
