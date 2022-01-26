@@ -31,4 +31,15 @@ Just replace the `inti.vim` file with this,
     let &packpath = &runtimepath
     source ~/.vimrc
 ```
+
+## Bashrc
+
+<b>Requirements</b> : bash-completion (for autocompletion)
+
+### Sources
+
+Polybar & Xresources : [@ManuLosta/dotfiles](https://github.com/ManuLosta/dotfiles)\
+Powerline Fonts : [@powerline/fonts](https://github.com/powerline/fonts)\
+Bashrc : [@gentoo-bashrc](https://aur.archlinux.org/packages/gentoo-bashrc/)
+
 ------------------------------------------------
