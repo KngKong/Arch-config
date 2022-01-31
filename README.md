@@ -3,10 +3,12 @@
 Config files of my arch rice. Just copy the files to the following directories.
 
 ![Desktop](https://github.com/KngKong/Arch-config/blob/master/screenshots/desktop.jpg)
-![Dmenu](https://github.com/KngKong/Arch-config/blob/master/screenshots/dmenu.png)
+
 ## Dmenu
 
 <b>Requirements</b> : XLib header files.
+
+![Dmenu](https://github.com/KngKong/Arch-config/blob/master/screenshots/dmenu.png)
 
 <b>Pathces Included</b>  
 * Case insensitive <br /> 
