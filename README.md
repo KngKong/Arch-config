@@ -2,7 +2,7 @@
 
 Config files of my arch rice. Just copy the files to the following directories.
 
-## Make Dmenu
+## Dmenu
 
 <b>Requirements</b> : XLib header files.
 
