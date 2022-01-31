@@ -4,15 +4,10 @@ call plug#begin()
   Plug 'Raimondi/delimitMate'
   Plug 'vim-syntastic/syntastic'
   Plug 'airblade/vim-gitgutter'
-  Plug 'cespare/vim-toml'
   Plug 'editorconfig/editorconfig-vim'
-  Plug 'itchyny/lightline.vim'
   Plug 'junegunn/vim-easy-align'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
-  Plug 'mengelbrecht/lightline-bufferline'
-  Plug 'lifepillar/vim-gruvbox8'
-  Plug 'vim-airline/vim-airline-themes'
   Plug 'joshdick/onedark.vim'
   Plug 'tpope/vim-commentary'
   Plug 'xolox/vim-misc'
@@ -20,6 +15,7 @@ call plug#begin()
   Plug 'majutsushi/tagbar'
   Plug 'vim-airline/vim-airline'
   Plug 'thaerkh/vim-workspace'
+  Plug 'ycm-core/YouCompleteMe'
 call plug#end()
 " Plugins END
 "------------------------------------------------
@@ -35,11 +31,13 @@ set nocompatible
 set noswapfile
 set nowritebackup
 set number
+set incsearch 
 set signcolumn=yes
 set title
 set wrap
 setlocal wrap
 set t_Co=256
+set clipboard+=unnamedplus
 " Settings END
 "------------------------------------------------
 
@@ -59,6 +57,7 @@ autocmd BufReadPost *
 " persist END
 "------------------------------------------------
 
+"------------------------------------------------
 " We need this for plugins like Syntastic and vim-gitgutter which put symbols
 " in the sign column.
 hi clear SignColumn
@@ -70,6 +69,7 @@ augroup mySyntastic
   au!
   au FileType tex let b:syntastic_mode = "passive"
 augroup END
+"------------------------------------------------
 
 "------------------------------------------------
 " Theme START
@@ -100,50 +100,9 @@ let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = '☰ '
-let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.linenr = ' ☰ '
+let g:airline_symbols.maxlinenr = ' '
 let g:airline_symbols.dirty='⚡'
-
-" let buffers be clickable
-let g:lightline#bufferline#clickable=1
-let g:lightline#bufferline#shorten_path=1
-let g:lightline#bufferline#min_buffer_count=1
-
-let g:lightline = {
-\  'colorscheme': 'onedark',
-\  'active': {
-\    'left': [ [], [], [ 'relativepath' ] ],
-\    'right': [ [], [], [ 'lineinfo', 'percent' ] ]
-\  },
-\  'inactive': {
-\    'left': [ [], [], [ 'relativepath' ] ],
-\    'right': [ [], [], [ 'lineinfo', 'percent' ] ]
-\  },
-\  'subseparator': {
-\    'left': '', 'right': ''
-\  },
-\  'tabline': {
-\    'left': [ ['buffers'] ],
-\    'right': [ [] ]
-\  },
-\  'tabline_separator': {
-\    'left': "", 'right': ""
-\  },
-\  'tabline_subseparator': {
-\    'left': "", 'right': ""
-\  },
-\  'component_expand': {
-\    'buffers': 'lightline#bufferline#buffers'
-\  },
-\  'component_raw': {
-\    'buffers': 1
-\  },
-\  'component_type': {
-\    'buffers': 'tabsel'
-\  }
-\}
-
-" Theme END
 "------------------------------------------------
 
 " ----- xolox/vim-easytags settings -----
@@ -158,7 +117,6 @@ let g:easytags_suppress_ctags_warning = 1
 
 " ----- majutsushi/tagbar settings -----
 " Open/close tagbar with \b
-nmap <silent> <leader>b :TagbarToggle<CR>
 " Uncomment to open tagbar automatically whenever possible
 "autocmd BufEnter * nested :call tagbar#autoopen(0)
 
@@ -177,15 +135,12 @@ augroup mydelimitMate
   au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
 augroup END
 
-
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+"------------------------------------------------
+set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 " Toggle between buffers
 inoremap kj <Esc>
-nmap <Leader>bn :bn<CR>
-nmap <Leader>bp :bp<CR>
-nnoremap <C-p> :Rg<Cr>
-nnoremap <C-e> :Files<Cr>
+nmap <silent> <leader>b :TagbarToggle<CR>
 nmap <Leader>bl :Buffers<CR>
 nmap <Leader>g :GFiles<CR>
 nmap <Leader>e :Files<CR>
